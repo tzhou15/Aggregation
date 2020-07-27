@@ -6,7 +6,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 public class Map extends Mapper<Object, Text, Text, DoubleWritable> {
 	public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
 		String[] tokens = value.toString().split(",");
-		String time = tokens[0].replaceAll("\\:|\\.|", "");
+		String time = tokens[0].replaceAll("\\:|\\.|\\-|", "");
 		String hourData = time.substring(8,9);
 		String minData = time.substring(10,11);
 		String secData = time.substring(12,13);
