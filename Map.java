@@ -19,9 +19,8 @@ public class Map extends Mapper<LongWritable, Text, Text, DoubleWritable> {
         		} 
         	}
         } catch (Exception e) {
-            e.printStackTrace();}
-        }
-        public void Result(Context context) throws IOException, InterruptedException {	
+            e.printStackTrace();
+         }
     	context.write(new Text(Key), new DoubleWritable(Double.parseDouble(Value))); 
-    }
+        }
 }
